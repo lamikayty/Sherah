@@ -130,7 +130,7 @@ section.show {
 #hero {
   position: relative;
   height: 100vh;
-  background: url("sherah-doctors.jpeg") no-repeat center center/cover;
+  background: url("./sherah-doctors.jpeg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
