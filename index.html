@@ -1,32 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Support Sherah Outreach initiative</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">Sherah</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#initiative">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#join">Join Us</a></li>
+      </ul>
+    </nav>
 
-    <header>
-        <h1>Support Sherah Outreach</h1>
-        <p>Make a difference today by signing up to support.</p>
-    </header>
-
-    <section class="signup-section">
-        <h2>Sign Up to Support</h2>
-        <form id="signup-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <button type="submit">Join Now</button>
-        </form>
-        <p id="response-message"></p>
+    <section id="hero">
+      <h1 class="hero-heading">SHERAH OUTREACH INITIATIVE</h1>
+      <p>Building Cities one life at a time. 1 Chronicles 7:24</p>
     </section>
 
+    <!-- Initiative Section -->
+    <section id="initiative">
+      <div class="initiative-content">
+        <h2>
+          A Legacy project: Invest in the future! Pay a child’s school fees!
+        </h2>
+        <p class="about-initiative">
+          About 20 years ago I came across a verse in the Bible that struck a
+          chord deep inside me. I began to see myself as Sherah – a builder of
+          cities (schools) since I have been an educator for more than 40 years.
+          However, as always happens when the Lord wants you to reflect deeper,
+          I adjusted that vision to the one of building cities one life at a
+          time. <br />
+          <br />
+          In the very early days of my walk with the Lord I had the awesome
+          privilege of access to an old collection of Christian books –
+          autobiographies and biographies of men and women who had given up all
+          to follow the Lord and obey His Word – Matt. 28: 18 – 20 <br />
+          <br />
+          When I read about their exploits, I believed this was the type of life
+          every believer has been called to live. So, when I got an opportunity
+          to meet a present-day missionary (who had truly given up all) and get
+          involved in her mission field I could not hesitate. With time I began
+          to support a few more missionaries on a monthly basis. <br />
+          <br />
+          In March 2021, the Lord laid it upon my heart to take a step of faith
+          in regard to a higher level of commitment to missionaries: to get
+          involved in the provision of good quality of education for their
+          children even if it involves putting them in boarding schools. This
+          gave birth to the Sherah Outreach Initiative (RC 163964), an NGO
+          registered by the Federal Government of Nigeria. <br />
+          <br />
+          The education of their children has always been a great burden for
+          missionaries especially those in rural areas. Some have even lost
+          children to human traffickers due to false promises of help. <br />
+          <br />
+          SOI undertakes to educate children of missionaries in the best schools
+          nearest to them; this frees the missionaries to undertake their
+          assignments with joy and gives the children a practical demonstration
+          of God’s love and provision. All the children in each family have
+          their fees fully paid.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <h2>Our Impact in Pictures</h2>
+      <div class="slideshow-container">
+        <div class="slide fade" style="display: block">
+          <img src="boat-journey.jpeg" alt="Outreach Image 1" />
+        </div>
+        <div class="slide fade">
+          <img src="boys-scout.jpeg" alt="Outreach Image 2" />
+        </div>
+        <div class="slide fade">
+          <img src="junior-sherah.jpeg" alt="Outreach Image 3" />
+        </div>
+        <!-- <div class="slide fade">
+          <img src="little-childern-too.jpeg" alt="Outreach Image 4" />
+        </div> -->
+        <div class="slide fade">
+          <img src="little-children.jpeg" alt="Outreach Image 5" />
+        </div>
+        <!-- <div class="slide fade">
+          <img src="pink-uniformed.jpeg" alt="Outreach Image 6" />
+        </div> -->
+        <div class="slide fade">
+          <img src="sherah-docs.jpeg" alt="Outreach Image 7" />
+        </div>
+        <!-- <div class="slide fade">
+          <img src="uniformed.jpeg" alt="Outreach Image 8" />
+        </div> -->
+
+        <!-- Navigation buttons -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+
+      <!-- Slide indicators -->
+      <div class="dots">
+        <span class="dot active" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+        <span class="dot" onclick="setSlide(4)"></span>
+        <span class="dot" onclick="setSlide(5)"></span>
+        <!-- <span class="dot" onclick="setSlide(6)"></span>
+        <span class="dot" onclick="setSlide(7)"></span>
+        <span class="dot" onclick="setSlide(8)"></span> -->
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" />
+    </div>
+
+    <!-- Join Us Section -->
+    <section id="join">
+      <h2>Join Our Outreach</h2>
+      <div class="join-container">
+        <form
+          id="signup-form"
+          action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse"
+          method="POST"
+          target="_blank"
+        >
+          <input
+            type="text"
+            name="entry.YOUR_NAME_FIELD_ID"
+            id="name"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            name="entry.YOUR_EMAIL_FIELD_ID"
+            id="email"
+            placeholder="Email Address"
+            required
+          />
+          <input
+            type="tel"
+            name="entry.YOUR_PHONE_FIELD_ID"
+            id="phone"
+            placeholder="Phone Number"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="contribute-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <p>Would you like to contribute instead?</p>
+              <p>Hover to see account details</p>
+            </div>
+            <div class="card-back">
+              <p><strong>Bank Name:</strong> GTB</p>
+              <p><strong>Account Name:</strong> Sherah Outreach Initiative</p>
+              <p><strong>Account Number:</strong> 0660064063</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="response-message"></p>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
-        <p>© 2025 Sherah Outreach Initiative</p>
+      <div class="footer-container">
+        <p class="copyright">
+          &copy; <span id="year"></span> Sherah. All rights reserved.
+        </p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://linkedin.com" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:Sherahoutreachinitiative@gmail.com" target="_blank"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+        <div>
+          <p class="copyright">
+            <i class="fa-solid fa-phone"></i><span>+(234) 07051461754 </span>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  </body>
 </html>
