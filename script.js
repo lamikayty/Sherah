@@ -1,17 +1,34 @@
 document
   .getElementById("signup-form")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
     event.preventDefault();
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
 
-    if (name && email) {
-      document.getElementById(
-        "response-message"
-      ).textContent = `Thank you, ${name}! You've successfully signed up to support Sherah Outreach.`;
-      document.getElementById("signup-form").reset();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSfxKRZ-Ur8EUs7TNFlrBDWxg7w4_QsavnhRCWiKu-TNhN4zvA/formResponse",
+        {
+          method: "POST",
+          body: formData,
+          mode: "no-cors", // Google Forms doesn't support CORS
+        }
+      );
+
+      if (name && email) {
+        document.getElementById(
+          "response-message"
+        ).textContent = `Thank you, ${name}! You've successfully signed up to support Sherah Outreach.`;
+        document.getElementById("signup-form").reset();
+      }
+    } catch (error) {
+      document.getElementById("response-message").innerText =
+        "Oops! Something went wrong. Try again.";
     }
   });
 

@@ -379,24 +379,6 @@ form {
   max-width: 500px;
 }
 
-/* When screen width is below 768px (tablet & mobile), stack in a column */
-@media (max-width: 768px) {
-  .join-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contribute-card,
-  form {
-    width: 90%; /* Take full width on smaller screens */
-  }
-
-  .card-front,
-  .card-back {
-    width: 60%;
-  }
-}
-
 /* Form */
 form {
   flex: 1;
@@ -514,6 +496,28 @@ form button:hover {
   transform: rotateY(180deg);
 }
 
+/* When screen width is below 768px (tablet & mobile), stack in a column */
+@media (max-width: 768px) {
+  .join-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contribute-card,
+  form {
+    width: 90%; /* Take full width on smaller screens */
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+  }
+
+  /* .card-inner {
+    width: 50%;
+  } */
+}
+
 /* Footer */
 footer {
   background: #6a0db0;
@@ -538,6 +542,12 @@ footer {
 .social-icons {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 20px;
+  }
 }
 
 .social-icons a {
